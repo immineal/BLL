@@ -97,7 +97,7 @@ def plot_learning_rate_impact(learning_rates):
     
     # Save the loss data to a CSV file
     loss_df = pd.DataFrame(all_loss_data)
-    loss_df.to_csv('learning_rate_loss_data.csv', index_label='Epoch')
+    loss_df.to_csv('data/learning_rate_loss_data.csv', index_label='Epoch')
     
     plt.title('Impact of Learning Rate on Training Loss')
     plt.xlabel('Epoch')
@@ -106,7 +106,7 @@ def plot_learning_rate_impact(learning_rates):
     plt.legend()
     plt.grid()
     plt.tight_layout()
-    plt.savefig('learning_rate_impact_log.png')
+    plt.savefig('images/learning_rate_impact_log.png')
     plt.show()
 
 # Define neural network parameters
