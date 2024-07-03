@@ -12,7 +12,6 @@ Briefly describe what your scripts do and how they relate to your paper. For exa
 List any software requirements or dependencies needed to run your scripts. For example:
 - Python 3.7+
 - NumPy
-- Pandas
 - Matplotlib
 
 ## Usage
