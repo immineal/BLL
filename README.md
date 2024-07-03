@@ -1,47 +1,27 @@
-# Scripts for [Your Paper Title]
+# Scripts for [On Mechanisms, Ethical Considerations and Developmental Trajectories in Machine Learning]
 
-This repository contains the scripts used in the paper "[Your Paper Title]" by [Your Name(s)].
+This repository contains the scripts used for visualisations and demonstration in the BLL "[On Mechanisms, Ethical Considerations and Developmental Trajectories in Machine Learning]" by [Aaron Schneberger and Linus Linhof].
 
 ## Description
 
-Briefly describe what your scripts do and how they relate to your paper. For example:
-"These scripts perform data analysis and generate figures for our study on [brief description of your research]."
+These scripts demonstrate the implementation of a simple neural network, create visualisations and generate graphs for our study on [Machine Learning and its Implications]."
 
 ## Requirements
 
-List any software requirements or dependencies needed to run your scripts. For example:
 - Python 3.7+
 - NumPy
 - Matplotlib
-
-## Usage
-
-Explain how to use your scripts. For example:
-1. Clone this repository
-2. Install the required dependencies: `pip install -r requirements.txt`
-3. Run the main analysis script: `python main_analysis.py`
+- Pandas
+- keras.datasets and keras.utils
 
 ## File Description
 
 Briefly describe the purpose of each script or directory in your repository. For example:
-- `data_processing.py`: Cleans and preprocesses the raw data
-- `analysis.py`: Performs the main statistical analyses
-- `visualizations.py`: Generates figures used in the paper
-- `utils/`: Contains utility functions used across multiple scripts
-
-## Data
-
-Explain how to obtain the data used by your scripts, if applicable. If you're including sample data, mention it here.
+- `nn.py`: Implements a simple Neural Network to recognize handwritten digits
+- `learning_rate_demonstration.py`: Performs a benchmark for a wide range of learning rates to visualize their impact on the efficiency of the algorithm
+- `plot_activation_functions.py`: Generates figures for the activation functions used in the BLL
+- `work_progress.py`: Creates the cumulative graph for our work progress seen in the chapter "Description of work progress"
 
 ## License
 
-This project is licensed under the [choose a license, e.g., MIT License] - see the [LICENSE.md](LICENSE.md) file for details.
-
-## Contact
-
-Provide your contact information for people who may have questions about your code or paper.
-
-## Citation
-
-If you use this code in your research, please cite our paper:
-[Your citation information here]
+This project is licensed under the [MIT License] - see the [LICENSE](LICENSE) file for details.
