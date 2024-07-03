@@ -1,10 +1,10 @@
-# Scripts for [On Mechanisms, Ethical Considerations and Developmental Trajectories in Machine Learning]
+# Machine Learning Mechanisms, Ethics, and Trajectories
 
-This repository contains the scripts used for visualisations and demonstration in the BLL "[On Mechanisms, Ethical Considerations and Developmental Trajectories in Machine Learning]" by [Aaron Schneberger and Linus Linhof].
+This repository contains scripts for visualizations and demonstrations used in the BLL (Besondere Lernleistung) titled "On Mechanisms, Ethical Considerations and Developmental Trajectories in Machine Learning" by Aaron Schneberger and Linus Linhof.
 
-## Description
+## Overview
 
-These scripts demonstrate the implementation of a simple neural network, create visualisations and generate graphs for our study on [Machine Learning and its Implications]."
+Our project explores the intricacies of Machine Learning, focusing on its mechanisms, ethical implications, and future developmental paths. The scripts in this repository implement a simple neural network and generate various visualizations to support our study.
 
 ## Requirements
 
@@ -12,15 +12,16 @@ These scripts demonstrate the implementation of a simple neural network, create 
 - NumPy
 - Matplotlib
 - Pandas
-- keras.datasets and keras.utils
+- Keras (keras.datasets and keras.utils)
 
-## File Description
+## Scripts
 
-Briefly describe the purpose of each script or directory in your repository. For example:
-- `nn.py`: Implements a simple Neural Network to recognize handwritten digits
-- `learning_rate_demonstration.py`: Performs a benchmark for a wide range of learning rates to visualize their impact on the efficiency of the algorithm
-- `plot_activation_functions.py`: Generates figures for the activation functions used in the BLL
-- `work_progress.py`: Creates the cumulative graph for our work progress seen in the chapter "Description of work progress"
+| File | Description |
+|------|-------------|
+| `nn.py` | Implements a simple Neural Network for handwritten digit recognition |
+| `learning_rate_demonstration.py` | Benchmarks various learning rates to visualize their impact on algorithm efficiency |
+| `plot_activation_functions.py` | Generates figures of activation functions discussed in the BLL |
+| `work_progress.py` | Creates a cumulative graph of our work progress for the "Description of work progress" chapter |
 
 ## License
 
