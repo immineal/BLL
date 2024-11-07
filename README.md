@@ -61,7 +61,7 @@ To use the trained model for predictions, use the `predict_digit.py` script. Thi
 
 ### Step 1: Prepare the Image
 
-Place an image you want to classify in the same directory as the `predict_digit.py` script. The image should be a grayscale image (e.g., PNG or JPG) containing a handwritten digit. Ensure the image is resized to 28x28 pixels.
+Place an image you want to classify in the same directory as the `predict_digit.py` script. The image should be a grayscale image (e.g., PNG or JPG) containing a handwritten digit in **white on a black background**. Ensure the image is resized to 28x28 pixels.
 
 ### Step 2: Run the Prediction Script
 
