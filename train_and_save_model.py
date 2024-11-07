@@ -1,8 +1,13 @@
+import os
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'  # Suppress INFO and WARNING messages
+os.environ['CUDA_VISIBLE_DEVICES'] = '-1'  # Disable GPU
+
 import numpy as np
 import pickle
 from keras.datasets import mnist
 from keras.utils import to_categorical
 from concurrent.futures import ThreadPoolExecutor
+import time
 
 class NeuralNetwork:
     def __init__(self, input_size, hidden_size, output_size):
@@ -44,8 +49,11 @@ class NeuralNetwork:
         hidden_input, hidden_output, output = self.forward(X_batch)
         self.backward(X_batch, y_batch, hidden_input, hidden_output, output, learning_rate)
 
-    def train(self, X, y, epochs=50, batch_size=64, learning_rate=0.01, num_threads=16):
+    def train(self, X, y, epochs=100, batch_size=64, learning_rate=0.01, num_threads=16):
         for epoch in range(epochs):
+            if epoch % 10 == 0:
+                start_time = time.time()  # Record the start time for each epoch
+            
             with ThreadPoolExecutor(max_workers=num_threads) as executor:
                 # Split data into batches and submit each batch to a separate thread
                 futures = []
@@ -58,10 +66,12 @@ class NeuralNetwork:
                 for future in futures:
                     future.result()
             
+            # Calculate and print the time taken for this epoch
+            elapsed_time = time.time() - start_time
             if epoch % 10 == 0:
                 _, _, output = self.forward(X)  # Use the entire dataset to compute loss
                 loss = -np.sum(y * np.log(output + 1e-15)) / y.shape[0]
-                print(f'Epoch {epoch}, Loss: {loss:.4f}')
+                print(f'Epoch {epoch}, Loss: {loss:.4f}, Time taken: {elapsed_time:.2f} seconds')
     
     def predict(self, X):
         _, _, output = self.forward(X)
@@ -86,9 +96,12 @@ if __name__ == "__main__":
     test_labels = to_categorical(test_labels)
 
     # Initialize and train the neural network with multithreading
-    nn = NeuralNetwork(784, 256, 10)
+    start_time_total = time.time()
+    nn = NeuralNetwork(784, 512, 10)
     nn.train(train_images, train_labels, epochs=100, batch_size=64, learning_rate=0.01, num_threads=16)
     nn.save_model('model_weights.pkl')
+    elapsed_time_total = time.time() - start_time_total
+    print("Time taken total: {elapsed_time:total:.2f} seconds")
 
     # Evaluate the model on the test set
     test_predictions = nn.predict(test_images)
